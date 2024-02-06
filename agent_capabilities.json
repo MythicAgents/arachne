@@ -1,0 +1,15 @@
+{
+  "os": ["Windows", "Linux"],
+  "languages": ["aspx", "php"] ,
+  "features": {
+    "mythic": ["browser scripts", "docker", "file browser",
+       "p2p"],
+    "custom": ["killdate","inline assembly"]
+  },
+  "payload_output": ["aspx", "php"],
+  "architectures": ["x86_64", "amd_64"],
+  "c2": ["webshell"],
+  "mythic_version": "3.2",
+  "agent_version": "0.0.1",
+  "supported_wrappers": []
+}
