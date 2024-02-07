@@ -118,7 +118,7 @@ function process_message($full_message){
 	//echo count($pieces);
 	if( count($pieces) < 2 ){
 	    if(count($pieces) > 0){
-	        return $pieces[0] . | . "wrong number of pieces";
+	        return $pieces[0] . "|" . "wrong number of pieces";
 	    }
 		return "|wrong number of pieces";
 	}
