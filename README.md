@@ -1,6 +1,6 @@
 # Arachne
 
-![arachne](/agent_icons/arachne.svg?width=300px)
+![arachne](/agent_icons/arachne.svg?width=100px)
 
 Arachne is a webshell payload for Windows (aspx) and Linux (php). 
 When run alone, the arachne container reaches out to the specified URL to issue tasking.

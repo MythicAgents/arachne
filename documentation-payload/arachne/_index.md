@@ -4,7 +4,7 @@ chapter = true
 weight = 100
 +++
 
-![logo](/agents/arachne/arachne.svg?width=300px)
+![logo](/agents/arachne/arachne.svg?width=100px)
 
 ## Summary
 

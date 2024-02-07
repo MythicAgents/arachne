@@ -5,7 +5,7 @@ weight = 15
 pre = "<b>1. </b>"
 +++
 
-![logo](/agents/arachne/arachne.svg?width=300px)
+![logo](/agents/arachne/arachne.svg?width=100px)
 
 ## Table of Contents
 
