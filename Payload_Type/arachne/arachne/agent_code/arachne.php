@@ -103,7 +103,7 @@ function download($path){
 	if( $content === false){
 		return "Failed to get contents of file";
 	}
-	return $content;
+	return base64_encode($content);
 }
 function process_message($full_message){
 	if( !check_date() ){
