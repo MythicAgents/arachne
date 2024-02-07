@@ -1,6 +1,10 @@
 # Arachne
 
+![arachne](/agent_icons/arachne.svg?width=300px)
+
 Arachne is a webshell payload for Windows (aspx) and Linux (php). 
+When run alone, the arachne container reaches out to the specified URL to issue tasking.
+When an agent links via P2P to an arachne agent, then that agent will remotely reach out to the specified URL to issue tasking.
 
 This version currently supports Mythic 2.3.+ and will update as necessary. It will not work with Mythic 2.2 and lower.
 

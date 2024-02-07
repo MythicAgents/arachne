@@ -2,14 +2,19 @@
 title = "Commands"
 chapter = true
 weight = 15
-pre = "<b>2. </b>"
+pre = "<b>1. </b>"
 +++
 
-![logo](/agents/arachne/arachne.svg?width=600px)
+![logo](/agents/arachne/arachne.svg?width=300px)
 
 ## Table of Contents
 
-  * [printspoofer](/agents/arachne/commands/printspoofer/)
-  * [shinject](/agents/arachne/commands/shinject/)
-  * [socks](/agents/arachne/commands/socks/)
-  * [execute_pe](/agents/arachne/commands/execute_pe/)
+  * [cd](/agents/arachne/commands/cd/)
+  * [checkin](/agents/arachne/commands/checkin/)
+  * [download](/agents/arachne/commands/download/)
+  * [execute_assembly](/agents/arachne/commands/execute_assembly/)
+  * [ls](/agents/arachne/commands/ls/)
+  * [pwd](/agents/arachne/commands/pwd/)
+  * [rm](/agents/arachne/commands/rm/)
+  * [shell](/agents/arachne/commands/shell/)
+  * [upload](/agents/arachne/commands/upload/)
