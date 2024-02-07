@@ -59,6 +59,7 @@ class Arachne(PayloadType):
                 resp.build_message = "Can't include more than one c2 profile currently"
                 return resp
             file1 = file1.replace("%UUID%", self.uuid)
+            remote_url = ""
             for c2 in self.c2info:
                 try:
                     profile = c2.get_c2profile()
@@ -69,6 +70,7 @@ class Arachne(PayloadType):
                     file1 = file1.replace('%PARAM%', c2_dict["query_param"])
                     file1 = file1.replace('%COOKIE%', c2_dict["cookie_name"])
                     file1 = file1.replace('%USER_AGENT%', c2_dict['user_agent'])
+                    remote_url = c2_dict["url"]
                 except Exception as e:
                     resp.build_stderr = str(e)
                     return resp
@@ -83,6 +85,9 @@ class Arachne(PayloadType):
                 PayloadUUID=self.uuid,
                 C2ProfileName="webshell",
             ))
+            resp.build_message = f"An initial callback is automatically created and tasking that callback will try to reach out directly to {remote_url} to issue tasking."
+            resp.build_message += f"\nLink to this callback from another agent in order to task {remote_url} from that agent."
+            resp.build_message += f"\nUnlink all other callbacks from this callback in order to have the payload type container reach out directly to {remote_url} again."
             if not create_callback.Success:
                 logger.info(create_callback.Error)
             else:
