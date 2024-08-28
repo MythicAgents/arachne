@@ -53,7 +53,6 @@ class CheckinCommand(CommandBase):
                     IsBase64Encoded=True
                 ))
                 if decrypted_resp.Success:
-                    logger.info(decrypted_resp.Message)
                     info = decrypted_resp.Message.decode().split('|')
                     await SendMythicRPCCallbackUpdate(MythicRPCCallbackUpdateMessage(
                         AgentCallbackUUID=taskData.Callback.AgentCallbackID,

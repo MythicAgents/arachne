@@ -19,7 +19,6 @@ class ArachneTranslator(TranslationContainer):
     async def translate_to_c2_format(self,
                                      inputMsg: TrMythicC2ToCustomMessageFormatMessage) -> TrMythicC2ToCustomMessageFormatMessageResponse:
         response = TrMythicC2ToCustomMessageFormatMessageResponse(Success=True)
-        #logger.info(inputMsg.Message)
         if "tasks" in inputMsg.Message:
             if len(inputMsg.Message["tasks"]) > 0:
                 response.Message = inputMsg.Message["tasks"][0]["parameters"].encode("UTF8")
@@ -33,7 +32,6 @@ class ArachneTranslator(TranslationContainer):
                                        inputMsg: TrCustomMessageToMythicC2FormatMessage) -> TrCustomMessageToMythicC2FormatMessageResponse:
         response = TrCustomMessageToMythicC2FormatMessageResponse(Success=True)
         response_pieces = inputMsg.Message.decode("UTF8").split("|")
-        #logger.info(response_pieces)
         response.Message = {
             "action": "post_response",
             "responses": [
