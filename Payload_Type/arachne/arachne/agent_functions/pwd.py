@@ -35,7 +35,8 @@ class PwdCommand(CommandBase):
             AgentCallbackUUID=taskData.Callback.AgentCallbackID,
             Message=message.encode(),
             IncludesUUID=False,
-            IsBase64Encoded=False
+            IsBase64Encoded=False,
+            C2Profile="webshell"
         ))
         if encrypted_resp.Success:
             try:
@@ -52,7 +53,8 @@ class PwdCommand(CommandBase):
                     AgentCallbackUUID=taskData.Callback.AgentCallbackID,
                     Message=response_data,
                     IncludesUUID=False,
-                    IsBase64Encoded=True
+                    IsBase64Encoded=True,
+                    C2Profile="webshell"
                 ))
                 logger.info(str(decrypted_resp.Message))
                 if decrypted_resp.Success:
