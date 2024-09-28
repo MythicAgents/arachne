@@ -44,7 +44,7 @@ function decrypt($ivHashCiphertext, $password) {
         $ciphertext = substr($ivHashCiphertext, 16,  -32);
         $key = base64_decode($password);
         if (!hash_equals(hash_hmac('sha256', $iv . $ciphertext, $key, true), $hash)) return "error";
-        return openssl_decrypt($ciphertext, $method, $key, $options=OPENSSL_RAW_DATA, $iv,);
+        return openssl_decrypt($ciphertext, $method, $key, $options=OPENSSL_RAW_DATA, $iv);
     } else {
         return $ivHashCiphertext;
     }
