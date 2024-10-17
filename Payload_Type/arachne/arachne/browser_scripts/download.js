@@ -8,17 +8,10 @@ function(task, responses){
         if(responses.length > 0){
             try{
                 let data = responses[0].split("\n")[1].split(": ")[1];
-                return {"download":[{
+                return {"media": [{
+                    "filename": task.display_params,
                         "agent_file_id": data,
-                        "variant": "contained",
-                        "name": "Download",
-                        "plaintext": "Download the file here: "
-                    }], "search": [{
-                        "plaintext": "View on the search page here: ",
-                        "hoverText": "opens a new search page",
-                        "search": "tab=files&searchField=Filename&search=" + task.display_params,
-                        "name": "Click Me!"
-                    }]};
+                    }]}
             }catch(error){
                 const combined = responses.reduce( (prev, cur) => {
                     return prev + cur;
