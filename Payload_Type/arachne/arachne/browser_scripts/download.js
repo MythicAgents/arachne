@@ -8,8 +8,9 @@ function(task, responses){
         if(responses.length > 0){
             try{
                 let data = responses[0].split("\n")[1].split(": ")[1];
+                let filename = responses[0].split("\n")[0].split("Successfully downloaded ")[1];
                 return {"media": [{
-                    "filename": task.display_params,
+                        "filename": filename,
                         "agent_file_id": data,
                     }]}
             }catch(error){
