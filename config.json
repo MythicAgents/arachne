@@ -5,6 +5,6 @@
   "exclude_documentation_c2": false,
   "exclude_agent_icons": false,
   "remote_images": {
-    "arachne": "ghcr.io/mythicagents/arachne:v0.0.0.9"
+    "arachne": "ghcr.io/mythicagents/arachne:v0.0.0.10"
   }
 }
