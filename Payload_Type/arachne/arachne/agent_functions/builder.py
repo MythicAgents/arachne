@@ -23,6 +23,11 @@ class Arachne(PayloadType):
     agent_icon_path = agent_path / "agent_functions" / "arachne.svg"
     agent_code_path = agent_path / "agent_code"
     build_parameters = [
+        BuildParameter(name="shellenv",
+                       description="Shell Environment",
+                       parameter_type=BuildParameterType.ChooseOne,
+                       choices=["php", "aspx", "jsp"],
+                       default_value="php"),
         BuildParameter(name="aespsk",
                        description="Encryption Type",
                        parameter_type=BuildParameterType.ChooseOne,
@@ -41,16 +46,20 @@ class Arachne(PayloadType):
         # this function gets called to create an instance of your payload
         resp = BuildResponse(status=BuildStatus.Error)
         try:
-            if self.selected_os == "Windows":
+            if self.get_parameter("shellenv") == "aspx":
                 file1 = open(f"{self.agent_code_path}/arachne.aspx", 'r').read()
                 if not self.filename.endswith(".aspx"):
                     resp.updated_filename = self.filename + ".aspx"
-            elif self.selected_os == "Linux":
+            elif self.get_parameter("shellenv") == "php":
                 file1 = open(f"{self.agent_code_path}/arachne.php", "r").read()
                 if not self.filename.endswith(".php"):
                     resp.updated_filename = self.filename + ".php"
+            elif self.get_parameter("shellenv") == "jsp":
+                file1 = open(f"{self.agent_code_path}/arachne.jsp", "r").read()
+                if not self.filename.endswith(".jsp"):
+                    resp.updated_filename = self.filename + ".jsp"
             else:
-                resp.build_stderr = f"Unknown payload os: {self.selected_os}"
+                resp.build_stderr = f"Unknown payload type: {self.get_parameter('shellenv')}"
                 return resp
             if len(self.c2info) == 0:
                 resp.build_message = "Must include the `webshell` c2 with communication parameters"
