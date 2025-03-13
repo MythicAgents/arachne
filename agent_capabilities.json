@@ -6,10 +6,10 @@
        "p2p"],
     "custom": ["killdate","inline assembly"]
   },
-  "payload_output": ["aspx", "php"],
+  "payload_output": ["aspx", "php", "jsp"],
   "architectures": ["x86_64"],
   "c2": ["webshell"],
   "mythic_version": "3.3",
-  "agent_version": "0.0.3",
+  "agent_version": "0.0.4",
   "supported_wrappers": []
 }

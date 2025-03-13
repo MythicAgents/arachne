@@ -13,8 +13,8 @@ class Arachne(PayloadType):
     wrapper = False
     wrapped_payloads = []
     note = """
-    This payload uses C# to create a webshell targeting Windows IIS servers capable of executing ASPX web pages.
-    This payload optionally creates a PHP webshell with a different set of functionalities.
+    This payload creates a webshell targeting Windows IIS servers capable of executing ASPX web pages, PHP webshell with a different set of functionalities, and JSP webshells.
+    Version 0.0.4
     """
     supports_dynamic_loading = False
     mythic_encrypts = True
