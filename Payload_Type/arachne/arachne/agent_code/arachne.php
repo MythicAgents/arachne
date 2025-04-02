@@ -63,17 +63,6 @@ if($_COOKIE["%COOKIE%"] != base64_encode($cookie_value)){
 	abort_call();
 }
 function list_directory($path){
-	$files = scandir($path);
-	$output = "Listing contents of: " . realpath($path) . "\n";
-	$output = $output . "\tUID\tGID\tSize\tMTime\tName\n";
-	foreach ($files as $item) {
-		$curFile = stat($path . "/" . $item);
-		$curOutput = $curFile["uid"] . "\t" . $curFile["gid"] . "\t" . $curFile["size"] . "Bytes \t" . date("Y-m-d\TH:i:s\Z", $curFile["mtime"]) . "\t" . $item;
-		$output = $output . "\n" . $curOutput;
-	  }
-	return $output;
-}
-function list_directory($path){
     // check if directory exists and is readable
     if (!is_dir($path) || !is_readable($path)) {
         return "Error: Directory '$path' does not exist or is not readable.";
