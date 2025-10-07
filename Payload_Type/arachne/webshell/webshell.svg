@@ -1,0 +1,59 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#1a1a1a" stroke="#00ff00" stroke-width="3"/>
+  
+  <!-- Spider web - more prominent -->
+  <g stroke="#66ccff" stroke-width="2" fill="none">
+    <!-- Radial lines (16 spokes) -->
+    <line x1="100" y1="100" x2="100" y2="20"/>
+    <line x1="100" y1="100" x2="135" y2="35"/>
+    <line x1="100" y1="100" x2="155" y2="55"/>
+    <line x1="100" y1="100" x2="165" y2="80"/>
+    <line x1="100" y1="100" x2="180" y2="100"/>
+    <line x1="100" y1="100" x2="165" y2="120"/>
+    <line x1="100" y1="100" x2="155" y2="145"/>
+    <line x1="100" y1="100" x2="135" y2="165"/>
+    <line x1="100" y1="100" x2="100" y2="180"/>
+    <line x1="100" y1="100" x2="65" y2="165"/>
+    <line x1="100" y1="100" x2="45" y2="145"/>
+    <line x1="100" y1="100" x2="35" y2="120"/>
+    <line x1="100" y1="100" x2="20" y2="100"/>
+    <line x1="100" y1="100" x2="35" y2="80"/>
+    <line x1="100" y1="100" x2="45" y2="55"/>
+    <line x1="100" y1="100" x2="65" y2="35"/>
+    
+    <!-- Concentric circles -->
+    <circle cx="100" cy="100" r="15"/>
+    <circle cx="100" cy="100" r="30"/>
+    <circle cx="100" cy="100" r="45"/>
+    <circle cx="100" cy="100" r="60"/>
+    <circle cx="100" cy="100" r="75"/>
+    <circle cx="100" cy="100" r="90"/>
+  </g>
+  
+  <!-- Center circle -->
+  <circle cx="100" cy="100" r="35" fill="#0d0d0d" stroke="#00ff00" stroke-width="2.5"/>
+  
+  <!-- Spider body -->
+  <ellipse cx="100" cy="95" rx="8" ry="10" fill="#00ff00"/>
+  <ellipse cx="100" cy="108" rx="12" ry="14" fill="#00ff00"/>
+  
+  <!-- Spider legs (8 legs, 4 on each side) -->
+  <g stroke="#00ff00" stroke-width="2" fill="none">
+    <!-- Right legs -->
+    <path d="M 112 90 Q 125 85, 130 80"/>
+    <path d="M 112 98 Q 128 98, 133 98"/>
+    <path d="M 112 106 Q 128 110, 133 115"/>
+    <path d="M 112 114 Q 125 120, 130 125"/>
+    
+    <!-- Left legs -->
+    <path d="M 88 90 Q 75 85, 70 80"/>
+    <path d="M 88 98 Q 72 98, 67 98"/>
+    <path d="M 88 106 Q 72 110, 67 115"/>
+    <path d="M 88 114 Q 75 120, 70 125"/>
+  </g>
+  
+  <!-- Spider eyes -->
+  <circle cx="97" cy="93" r="1.5" fill="#1a1a1a"/>
+  <circle cx="103" cy="93" r="1.5" fill="#1a1a1a"/>
+</svg>

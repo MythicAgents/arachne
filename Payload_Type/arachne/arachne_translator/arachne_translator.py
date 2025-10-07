@@ -16,18 +16,6 @@ class ArachneTranslator(TranslationContainer):
         response.EncryptionKey = b""
         return response
 
-    async def translate_to_c2_format(self,
-                                     inputMsg: TrMythicC2ToCustomMessageFormatMessage) -> TrMythicC2ToCustomMessageFormatMessageResponse:
-        response = TrMythicC2ToCustomMessageFormatMessageResponse(Success=True)
-        if "tasks" in inputMsg.Message:
-            if len(inputMsg.Message["tasks"]) > 0:
-                response.Message = inputMsg.Message["tasks"][0]["parameters"].encode("UTF8")
-            else:
-                response.Message = b""
-        else:
-            response.Message = b""
-        return response
-
     async def translate_from_c2_format(self,
                                        inputMsg: TrCustomMessageToMythicC2FormatMessage) -> TrCustomMessageToMythicC2FormatMessageResponse:
         response = TrCustomMessageToMythicC2FormatMessageResponse(Success=True)
@@ -41,4 +29,16 @@ class ArachneTranslator(TranslationContainer):
                     "completed": True
                 }
             ]}
+        return response
+
+    async def translate_to_c2_format(self,
+                                     inputMsg: TrMythicC2ToCustomMessageFormatMessage) -> TrMythicC2ToCustomMessageFormatMessageResponse:
+        response = TrMythicC2ToCustomMessageFormatMessageResponse(Success=True)
+        if "tasks" in inputMsg.Message:
+            if len(inputMsg.Message["tasks"]) > 0:
+                response.Message = inputMsg.Message["tasks"][0]["parameters"].encode("UTF8")
+            else:
+                response.Message = b""
+        else:
+            response.Message = b""
         return response

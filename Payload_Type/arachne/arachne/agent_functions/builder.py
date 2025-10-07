@@ -14,8 +14,8 @@ class Arachne(PayloadType):
     wrapped_payloads = []
     note = """
     This payload creates a webshell targeting Windows IIS servers capable of executing ASPX web pages, PHP webshell with a different set of functionalities, and JSP webshells.
-    Version 0.0.4
     """
+    semver = "0.1.0"
     supports_dynamic_loading = False
     mythic_encrypts = True
     translation_container = "arachne_translator"

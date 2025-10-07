@@ -6,8 +6,10 @@ class Webshell(C2Profile):
     name = "webshell"
     description = "P2P definition for interacting with a remote webshell through an agent"
     author = "@its_a_feature_"
+    semver = "0.0.1"
     is_p2p = True
     is_server_routed = False
+    agent_icon_path = Path(".") / "webshell" / "webshell.svg"
     server_folder_path = Path(".") / "c2_code"
     server_binary_path = server_folder_path / "server.py"
     parameters = [
