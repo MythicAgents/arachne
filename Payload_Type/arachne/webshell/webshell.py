@@ -9,7 +9,7 @@ class Webshell(C2Profile):
     semver = "0.0.1"
     is_p2p = True
     is_server_routed = False
-    agent_icon_path = Path(".") / "webshell" / "webshell.svg"
+    #agent_icon_path = Path(".") / "webshell" / "webshell.svg"
     server_folder_path = Path(".") / "c2_code"
     server_binary_path = server_folder_path / "server.py"
     parameters = [
