@@ -15,7 +15,12 @@ async def GetRequest(uuid: str, message: bytes, taskData: PTTaskMessageAllData) 
         logger.debug("Failed to query edges: %s", edges_query.Error)
     elif len(edges_query.Results) > 0:
         logger.debug(edges_query.Results)
-        return b''
+        p2p = False
+        for edge in edges_query.Results:
+            if edge.Source.ID != edge.Destination.ID:
+                p2p = True
+        if p2p:
+            return b''
     param_name = None
     cookie_name = None
     user_agent = None
